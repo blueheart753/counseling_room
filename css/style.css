@@ -1,0 +1,45 @@
+:root {
+  font-size: 26px;
+}
+
+@font-face {
+  font-family: "OTWelcomeRA";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2110@1.0/OTWelcomeRA.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.Title {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+  font-size: 2em;
+}
+
+.moveBTN {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  top: 5em;
+}
+
+.Select {
+  display: flex;
+  margin: 50px;
+  padding: 20px 40px;
+  border: 0;
+  background: #cca5ff;
+  font-size: 1.12em;
+  border-radius: 6px;
+  font-family: "OTWelcomeRA";
+  align-items: center;
+}
+
+#Teacher {
+  background: #c9eeff;
+}
