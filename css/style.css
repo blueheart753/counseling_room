@@ -70,7 +70,7 @@
   top: 4em;
   font-family: 'OTWelcomeRA';
   background: #d4b3ff;
-  /* opacity: 0; */
+  opacity: 0;
   border-radius: 5px;
   transition: 0.5s;
   user-select: none;
