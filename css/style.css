@@ -3,8 +3,9 @@
 }
 
 @font-face {
-  font-family: "OTWelcomeRA";
-  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2110@1.0/OTWelcomeRA.woff2") format("woff2");
+  font-family: 'OTWelcomeRA';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2110@1.0/OTWelcomeRA.woff2')
+    format('woff2');
   font-weight: normal;
   font-style: normal;
 }
@@ -28,18 +29,60 @@
   top: 5em;
 }
 
-.Select {
-  display: flex;
+.select {
   margin: 50px;
-  padding: 20px 40px;
+  width: 11em;
+  height: 3rem;
   border: 0;
   background: #cca5ff;
   font-size: 1.12em;
   border-radius: 6px;
-  font-family: "OTWelcomeRA";
   align-items: center;
+  transition: 0.2s;
 }
 
-#Teacher {
+.select:hover {
+  background: #c192ff;
+  transform: scale(1.005);
+}
+
+#teacher {
   background: #c9eeff;
+}
+
+#teacher:hover {
+  background: #afe6ff;
+  transform: scale(1.005);
+}
+
+.examContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.examBox {
+  padding: 20px;
+  width: 11em;
+  height: 15em;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  top: 4em;
+  font-family: 'OTWelcomeRA';
+  background: #d4b3ff;
+  /* opacity: 0; */
+  border-radius: 5px;
+  transition: 0.5s;
+  user-select: none;
+  margin: 50px;
+}
+
+.examTeachBox {
+  background: #8cdbff;
+}
+
+.exam {
+  margin: 10px 0;
+  font-size: 20px;
+  text-align: center;
 }
