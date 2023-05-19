@@ -1,0 +1,15 @@
+:root {
+  font-size: 26px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.Title {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+  font-size: 2em;
+}
