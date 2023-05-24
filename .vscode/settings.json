@@ -1,3 +1,19 @@
 {
-  "liveServer.settings.port": 5501
+  "sqltools.useNodeRuntime": true,
+  "sqltools.connections": [
+    {
+      "oracleOptions": {
+        "autoCommit": false,
+        "lowerCase": false
+      },
+      "previewLimit": 50,
+      "server": "localhost",
+      "port": 1521,
+      "driver": "Oracle",
+      "name": "DataBase",
+      "database": "xe",
+      "username": "admin",
+      "password": "1234"
+    }
+  ]
 }
