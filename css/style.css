@@ -3,9 +3,8 @@
 }
 
 @font-face {
-  font-family: 'OTWelcomeRA';
-  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2110@1.0/OTWelcomeRA.woff2')
-    format('woff2');
+  font-family: "OTWelcomeRA";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2110@1.0/OTWelcomeRA.woff2") format("woff2");
   font-weight: normal;
   font-style: normal;
 }
@@ -47,7 +46,7 @@ body {
 .show_CounselingRoom {
   color: #fff;
   font-size: 0.73em;
-  margin-top: 20px;
+  margin-top: 15px;
 }
 
 .first_Text {
@@ -58,4 +57,18 @@ body {
 .Title_CounselingRoom {
   color: #f2f7a1;
   font-size: 1.7em;
+}
+
+.showInterface {
+  width: 100vw;
+  display: flex;
+  justify-content: end;
+}
+.examImg {
+  width: 32vw;
+  display: flex;
+  justify-content: space-around;
+}
+
+.bannerImg {
 }
