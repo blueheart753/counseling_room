@@ -26,8 +26,10 @@ body {
 }
 
 .banner {
+  width: 100%;
   background: #6d67e4;
-  height: 30vh;
+  height: 15em;
+  position: relative;
 }
 
 .banner_TextBox {
@@ -57,18 +59,32 @@ body {
 .Title_CounselingRoom {
   color: #f2f7a1;
   font-size: 1.7em;
+  margin: 20px 0 50px 30px;
 }
 
 .showInterface {
-  width: 100vw;
+  width: 45%;
+  height: 60%;
   display: flex;
-  justify-content: end;
+  justify-content: center;
+  position: absolute;
+  left: 40%;
+  top: 0;
 }
 .examImg {
-  width: 32vw;
+  padding: 20px 0;
+  display: flex;
+  background: #453c67b0;
+  color: #fff;
+  border-radius: 0 0 12px 12px;
+  width: 100%;
   display: flex;
   justify-content: space-around;
+  margin: 0 10px;
+  font-size: 20px;
+  text-align: center;
 }
 
-.bannerImg {
+.examImg img {
+  width: 150px;
 }
