@@ -28,7 +28,7 @@ body {
 .banner {
   width: 100%;
   background: #6d67e4;
-  height: 15em;
+  height: 450px;
   position: relative;
 }
 
@@ -71,20 +71,51 @@ body {
   left: 40%;
   top: 0;
 }
-.examImg {
+.descriptionImg {
   padding: 20px 0;
   display: flex;
+  justify-content: space-around;
+  align-items: center;
   background: #453c67b0;
   color: #fff;
   border-radius: 0 0 12px 12px;
   width: 100%;
-  display: flex;
-  justify-content: space-around;
   margin: 0 10px;
-  font-size: 20px;
+  font-size: 0.8rem;
   text-align: center;
 }
 
-.examImg img {
+.descriptionImg img {
   width: 150px;
+}
+
+.moveBtn_box {
+  position: absolute;
+  left: 40%;
+  top: 70%;
+  width: 45%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.moveBtn {
+  width: 47%;
+  height: 100px;
+  font-size: 1.02em;
+  border-radius: 12px;
+}
+
+#studentBtn {
+  border: 0;
+  background: #46c2cb;
+  color: #fff;
+}
+
+#teacherBtn {
+  color: #fff;
+  background: none;
+  border: 1px solid #fff;
+}
+
+.descriptionText {
 }
