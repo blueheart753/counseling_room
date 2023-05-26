@@ -3,8 +3,9 @@
 }
 
 @font-face {
-  font-family: "OTWelcomeRA";
-  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2110@1.0/OTWelcomeRA.woff2") format("woff2");
+  font-family: 'OTWelcomeRA';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2110@1.0/OTWelcomeRA.woff2')
+    format('woff2');
   font-weight: normal;
   font-style: normal;
 }
@@ -28,8 +29,12 @@ body {
 .banner {
   width: 100%;
   background: #6d67e4;
-  height: 450px;
+  height: 500px;
   position: relative;
+}
+
+a {
+  color: #000;
 }
 
 .banner_TextBox {
@@ -47,13 +52,13 @@ body {
 
 .show_CounselingRoom {
   color: #fff;
-  font-size: 0.73em;
+  font-size: 0.79em;
   margin-top: 15px;
 }
 
 .first_Text {
   margin-top: 30px;
-  font-size: 0.85em;
+  font-size: 0.89em;
 }
 
 .Title_CounselingRoom {
@@ -118,4 +123,36 @@ body {
 }
 
 .descriptionText {
+  display: flex;
+  flex-direction: column;
+  width: 1000px;
+  height: 200px;
+  margin: 170px 0 0 60px;
+  padding: 0 0 50px 0;
+  border-bottom: 1px solid #000;
+}
+
+.descriptionText > h3 {
+  font-size: 1.8em;
+  margin-bottom: 30px;
+}
+
+.descriptionText > p {
+  color: #526d82;
+}
+
+.descriptionText > p:nth-child(2) {
+  position: relative;
+  left: 35%;
+  margin-bottom: 20px;
+}
+
+.descriptionText > p:nth-child(3) {
+  position: relative;
+  left: 15%;
+}
+
+.descriptionText > a {
+  position: relative;
+  left: 71%;
 }
