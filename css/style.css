@@ -164,9 +164,8 @@ a {
 
 #descriptionTeacher {
   position: relative;
-  left: 43%;
+  left: 40%;
   align-items: end;
-  margin-right: 50px;
 }
 
 #descriptionTeacher > p:nth-child(2) {
