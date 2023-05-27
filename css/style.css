@@ -125,11 +125,13 @@ a {
 .descriptionText {
   display: flex;
   flex-direction: column;
+  flex-wrap: wrap;
   width: 1000px;
   height: 200px;
   margin: 170px 0 0 60px;
   padding: 0 0 50px 0;
   border-bottom: 1px solid #000;
+  position: relative;
 }
 
 .descriptionText > h3 {
@@ -139,20 +141,48 @@ a {
 
 .descriptionText > p {
   color: #526d82;
-}
-
-.descriptionText > p:nth-child(2) {
-  position: relative;
-  left: 35%;
   margin-bottom: 20px;
 }
 
-.descriptionText > p:nth-child(3) {
-  position: relative;
-  left: 15%;
+#descriptionStudent > p:nth-child(2) {
+  position: absolute;
+  top: 40%;
+  left: 35%;
 }
 
-.descriptionText > a {
+#descriptionStudent > p:nth-child(3) {
+  position: absolute;
+  left: 15%;
+  top: 70%;
+}
+
+#descriptionStudent > a {
+  position: absolute;
+  left: 70%;
+  top: 70%;
+}
+
+#descriptionTeacher {
   position: relative;
-  left: 71%;
+  left: 43%;
+  align-items: end;
+  margin-right: 50px;
+}
+
+#descriptionTeacher > p:nth-child(2) {
+  position: absolute;
+  top: 40%;
+  right: 16%;
+}
+
+#descriptionTeacher > p:nth-child(3) {
+  position: absolute;
+  right: 53%;
+  top: 65%;
+}
+
+#descriptionTeacher > a {
+  position: absolute;
+  top: 70%;
+  right: 20%;
 }
