@@ -31,7 +31,7 @@ header {
 }
 
 .wrap {
-  width: 100%;
+  width: 95%;
   display: flex;
   margin: 40px;
 }
@@ -60,12 +60,19 @@ img {
   background: #e5beec;
   border: 0;
   width: 50%;
-  height: 80px;
+  height: 100px;
   color: #917fb3;
   font-size: 1.2em;
   border-radius: 10px;
+  transition: 0.3s;
 }
 
 .buttonContainer > button:nth-child(2n) {
-  margin-left: 65%;
+  margin-left: 85%;
+}
+
+.buttonContainer > button:hover {
+  color: #000;
+  transform: scale(1.01);
+  cursor: pointer;
 }
