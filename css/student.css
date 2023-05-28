@@ -7,6 +7,12 @@
   padding: 0;
 }
 
+header {
+  position: relative;
+  width: 95%;
+  margin: 0 auto;
+}
+
 .Title {
   display: flex;
   justify-content: center;
@@ -20,4 +26,6 @@
   padding: 10px 35px;
   border-radius: 8px;
   font-size: 1.04rem;
+  position: absolute;
+  top: 10px;
 }
