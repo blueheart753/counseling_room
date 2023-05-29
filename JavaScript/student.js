@@ -36,3 +36,11 @@ const reserCancel = function () {
     });
   });
 };
+
+const loginLogout = function () {
+  if (window.student_id != '') {
+    btns[0].textContent = '로그아웃';
+  } else {
+    btns[0].textContent = '로그인';
+  }
+};
