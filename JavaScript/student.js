@@ -24,6 +24,7 @@ const reserCancel = function () {
   cancel.style.display = 'block';
 
   cancelBtns.forEach((el, idx) => {
+    el.style.display = 'inline';
     el.addEventListener('click', () => {
       if (idx === 0) {
         cancelBtns[idx].style.display = 'none';
