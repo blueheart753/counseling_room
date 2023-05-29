@@ -15,7 +15,7 @@
   </head>
   <body>
     <h1 class="title">SIGN-IN</h1>
-    <form action="">
+    <form action="" method="post">
       <h2>SIGN-IN</h2>
       <p>예약하시기 전에 로그인을 해주세요</p>
       <div class="container">
@@ -26,6 +26,7 @@
           placeholder="학번을 입력해주세요"
           autofocus
           required
+          maxlength="5"
           pattern="[0-9]{5}"
         />
         <div
