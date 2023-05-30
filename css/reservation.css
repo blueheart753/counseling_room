@@ -1,14 +1,24 @@
 @font-face {
-  font-family: "KCC-Ganpan";
-  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302@1.0/KCC-Ganpan.woff2") format("woff2");
+  font-family: 'KCC-Ganpan';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302@1.0/KCC-Ganpan.woff2')
+    format('woff2');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
-  font-family: "ONE-Mobile-POP";
-  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/ONE-Mobile-POP.woff") format("woff");
+  font-family: 'ONE-Mobile-POP';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/ONE-Mobile-POP.woff')
+    format('woff');
   font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'TTTtangsbudaejjigaeB';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2212@1.0/TTTtangsbudaejjigaeB.woff2')
+    format('woff2');
+  font-weight: 700;
   font-style: normal;
 }
 
@@ -71,7 +81,7 @@ body {
   width: 180px;
   height: 45px;
   border-radius: 50px;
-  font-family: "ONE-Mobile-POP";
+  font-family: 'ONE-Mobile-POP';
   font-size: 20px;
 }
 
@@ -116,12 +126,15 @@ td {
   background: #e2e2e2;
   border-radius: 5px;
   display: flex;
+  flex-direction: column;
   justify-content: space-around;
-  align-items: flex-end;
-  padding-bottom: 20px;
 }
 
-.popupLayer > button {
+.popupBtn {
+  display: flex;
+}
+
+.popupBtn > button {
   margin: 0 auto;
   width: 45%;
   height: 50px;
@@ -129,12 +142,19 @@ td {
   border: 0;
   border-radius: 12px;
   font-size: 1.5em;
-  font-family: "KCC-Ganpan";
+  font-family: 'KCC-Ganpan';
   transition: 0.3s;
 }
 
-.popupLayer > button:hover {
+.popupBtn > button:hover {
   background: #924cee;
   color: #fff;
   cursor: pointer;
+}
+
+.Result {
+  margin-top: 20px;
+  font-family: 'TTTtangsbudaejjigaeB';
+  text-align: center;
+  font-size: 1.5em;
 }
