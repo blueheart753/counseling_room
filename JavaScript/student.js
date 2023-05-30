@@ -1,15 +1,16 @@
 const btns = document.querySelectorAll('.buttonContainer button');
+let isCancel = false;
 btns.forEach((el, idx) => {
   el.addEventListener('click', () => {
     switch (idx) {
       case 0:
-        location.href = 'studentLogin.html';
+        location.href = '../public/studentLogin.html';
         break;
       case 1:
-        location.href = 'reservationCheck.html';
+        location.href = '../public/reservationCheck.html';
         break;
       case 2:
-        location.href = 'reservation.html';
+        location.href = '../public/reservation.html';
         break;
       default:
         reserCancel();
@@ -26,12 +27,15 @@ const reserCancel = function () {
   cancelBtns.forEach((el, idx) => {
     el.style.display = 'inline';
     el.addEventListener('click', () => {
+      if (isCancel) cancelBtns[0].remove();
       if (idx === 0) {
         cancelBtns[idx].style.display = 'none';
         document.querySelector('.checkCancel p').textContent =
           '예약이 취소 되었습니다.';
+        isCancel = true;
       } else {
         cancel.style.display = 'none';
+        isCancel = false;
       }
     });
   });
