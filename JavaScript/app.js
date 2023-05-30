@@ -5,7 +5,7 @@ btns.forEach((el, idx) => {
     if (idx == 0) {
       location.href = './studentPage.html';
     } else {
-      location.href = './teacherPage.html';
+      location.href = './teacherLogin.html';
     }
   });
 });
