@@ -6,83 +6,76 @@
   font-style: normal;
 }
 
-:root {
-  font-size: 26px;
-}
-
 * {
   margin: 0;
   padding: 0;
 }
 
-header {
-  position: relative;
-  width: 95%;
-  margin: 0 auto;
+:root {
+  height: 100%;
 }
 
-.Title {
-  display: flex;
-  justify-content: center;
-  margin-top: 30px;
-  font-size: 2em;
-}
-
-#prev {
-  background: #cca5ff;
-  border: 0;
-  padding: 10px 35px;
-  border-radius: 8px;
-  font-size: 1.04rem;
-  position: absolute;
-  top: 10px;
-}
-
-.wrap {
-  width: 95%;
-  display: flex;
-  margin: 40px;
-}
-
-img {
-  width: 400px;
-  height: 400px;
-  margin-top: 100px;
+body {
+  height: 100%;
 }
 
 .container {
-  width: 100%;
-  display: flex;
-  justify-content: center;
+  height: 90%;
+  padding: 20px;
 }
 
-.buttonContainer {
-  width: 50%;
-  height: 700px;
+.reservationCheck {
   display: flex;
-  flex-direction: column;
   justify-content: space-around;
 }
 
-.buttonContainer > button {
-  background: #e5beec;
+.reservationBtn {
+  position: relative;
+  top: 200px;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.prev,
+.btn {
   border: 0;
-  width: 50%;
+  width: 250px;
+  height: 60px;
+  border-radius: 8px;
+  font-size: 1.44rem;
+  color: #fff;
+}
+
+.prev {
+  background: #655dbb;
+}
+
+.btn {
+  background: #3e54ac;
+}
+
+table {
+  width: 440px;
+  height: 85%;
+  border-collapse: collapse;
+}
+
+td,
+th {
+  width: 180px;
   height: 100px;
-  color: #917fb3;
-  font-size: 1.2em;
-  border-radius: 10px;
-  transition: 0.3s;
+  border: 1px solid #000;
+  text-align: center;
 }
 
-.buttonContainer > button:nth-child(2n) {
-  margin-left: 85%;
+th {
+  background: transparent;
 }
 
-.buttonContainer > button:hover {
-  color: #000;
-  transform: scale(1.01);
-  cursor: pointer;
+td {
+  background: #fff;
 }
 
 .reservationContainer {
@@ -115,6 +108,11 @@ img {
 
 .checkCancel {
   text-align: center;
+  font-size: 1.12em;
+}
+
+.checkCancel > p {
+  font-size: 1.6em;
   font-family: 'KIMM_Bold';
 }
 
@@ -124,6 +122,7 @@ img {
   border: 0;
   width: 40%;
   height: 50%;
-  font-size: 1.12em;
+  font-size: 1.16em;
+  font-weight: bold;
   border-radius: 10px;
 }
