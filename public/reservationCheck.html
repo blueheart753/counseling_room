@@ -4,7 +4,69 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <script src="../JavaScript/reservationCheck.js" defer></script>
+    <link rel="stylesheet" href="../css/reservationCheck.css" />
+    <title>예약 확인 페이지</title>
   </head>
-  <body></body>
+  <body>
+    <div class="container">
+      <a href="./studentPage.html">
+        <button type="button" class="prev">< Prev</button>
+      </a>
+      <div class="reservationCheck">
+        <div class="reservationBtn">
+          <a href="./reservation.html">
+            <button type="button" class="btn">예약하기</button>
+          </a>
+          <button type="button" class="btn">예약취소하기</button>
+        </div>
+        <table class="reservationTable">
+          <tr>
+            <th>시간</th>
+            <th>예약 상태</th>
+          </tr>
+          <tr>
+            <td>1교시</td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <td>2교시</td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <td>3교시</td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <td>4교시</td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <td>5교시</td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <td>6교시</td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <td>7교시</td>
+            <td>-</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+
+    <div class="reservationContainer">
+      <div class="reservation_cancel">
+        <div class="reservationBox">
+          <div class="checkCancel">
+            <p>예약을 취소 하시겠습니까?</p>
+            <button type="button">예약취소</button>
+            <button type="button">돌아가기</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>
