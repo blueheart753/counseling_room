@@ -5,10 +5,7 @@
 
 body {
   background: #e2e2e2;
-}
-
-.container {
-  padding: 20px;
+  margin: 20px;
 }
 
 .prev {
@@ -17,8 +14,6 @@ body {
   padding: 10px 35px;
   border-radius: 8px;
   font-size: 1.04rem;
-  position: absolute;
-  top: 10px;
 }
 
 h1 {
@@ -37,9 +32,11 @@ tbody {
 }
 td,
 th {
+  width: 200px;
   text-align: center;
   border: 1px solid #000;
   height: 120px;
+  font-size: 1.4em;
 }
 
 td button {
