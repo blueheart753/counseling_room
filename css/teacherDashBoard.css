@@ -3,12 +3,58 @@
   padding: 0;
 }
 
+body {
+  background: #e2e2e2;
+}
+
+.container {
+  padding: 20px;
+}
+
+.prev {
+  background: #cca5ff;
+  border: 0;
+  padding: 10px 35px;
+  border-radius: 8px;
+  font-size: 1.04rem;
+  position: absolute;
+  top: 10px;
+}
+
 h1 {
   text-align: center;
 }
 
 table {
   width: 80%;
-  height: 40%;
-  margin: 0 auto;
+  height: 50%;
+  margin: 5% auto;
+  border-collapse: collapse;
+}
+
+tbody {
+  border-radius: 6px;
+}
+td,
+th {
+  text-align: center;
+  border: 1px solid #000;
+  height: 120px;
+}
+
+td button {
+  width: 100%;
+  height: 100%;
+  color: #fff;
+  background: #f00;
+  border: 0;
+}
+
+td {
+  background: #fff;
+}
+
+td button:hover {
+  background: rgb(226, 0, 0);
+  cursor: pointer;
 }
