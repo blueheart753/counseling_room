@@ -1,7 +1,6 @@
 @font-face {
-  font-family: 'KIMM_Bold';
-  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2212@1.0/KIMM_Bold.woff2')
-    format('woff2');
+  font-family: "KIMM_Bold";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2212@1.0/KIMM_Bold.woff2") format("woff2");
   font-weight: 700;
   font-style: normal;
 }
@@ -13,6 +12,10 @@
 * {
   margin: 0;
   padding: 0;
+}
+
+body {
+  background: #e2e2e2;
 }
 
 header {
@@ -65,11 +68,10 @@ img {
 }
 
 .buttonContainer > button {
-  background: #e5beec;
-  border: 0;
+  border: 1px solid #000;
   width: 50%;
   height: 100px;
-  color: #917fb3;
+  color: #000;
   font-size: 1.2em;
   border-radius: 10px;
   transition: 0.3s;
@@ -80,8 +82,9 @@ img {
 }
 
 .buttonContainer > button:hover {
-  color: #000;
+  background-color: rgb(43, 43, 43);
   transform: scale(1.01);
+  color: #fff;
   cursor: pointer;
 }
 
@@ -103,9 +106,9 @@ img {
 }
 
 .reservationBox {
+  background: #e2e2e2;
   width: 550px;
   height: 250px;
-  background: #e2e2e2;
   border-radius: 5px;
   display: flex;
   align-content: center;
@@ -115,7 +118,7 @@ img {
 
 .checkCancel {
   text-align: center;
-  font-family: 'KIMM_Bold';
+  font-family: "KIMM_Bold";
 }
 
 .checkCancel > button {
