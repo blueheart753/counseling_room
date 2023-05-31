@@ -1,0 +1,14 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  text-align: center;
+}
+
+table {
+  width: 80%;
+  height: 40%;
+  margin: 0 auto;
+}
