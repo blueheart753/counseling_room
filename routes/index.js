@@ -1,13 +1,53 @@
-var express = require('express');
+var express = require("express");
 var router = express.Router();
 
+const { OAuth2Client } = require("google-auth-library");
+
+/**
+ * @description Function to decode Google OAuth token
+ * @param token: string
+ * @returns ticket object
+ */
+const getDecodedOAuthJwtGoogle = async (token) => {
+  const CLIENT_ID_GOOGLE = "297700983813-6bcnrhkujdtt7sbk4ai0e9jhr90kommk.apps.googleusercontent.com";
+  console.log("start auth");
+
+  try {
+    const client = new OAuth2Client(CLIENT_ID_GOOGLE);
+
+    const ticket = await client.verifyIdToken({
+      idToken: token,
+      audience: CLIENT_ID_GOOGLE,
+    });
+
+    console.log(ticket);
+
+    return ticket;
+  } catch (error) {
+    console.log(error.message);
+    return { status: 500, data: error };
+  }
+};
+
 /* GET home page. */
-router.get('/', function (req, res, next) {
-  res.render('index', { title: '상담실 | Counseling Room' });
+router.get("/", function (req, res, next) {
+  res.render("index", { title: "Express" });
 });
 
-router.get('/', function (req, res, next) {
-  res.render('studentPage', { title: '학생용 예약 사이트' });
+router.get("/studentPage", function (req, res, next) {
+  res.render("studentPage", { title: "Express" });
+});
+
+router.get("/studentLogin", function (req, res, next) {
+  res.render("studentLogin", { title: "Express" });
+});
+
+router.post("/studentLogin", function (req, res, next) {
+  console.log("logins successful");
+  const realUserData = getDecodedOAuthJwtGoogle(req.body.credential); // credentials === JWT token
+  // console.log(realUserData);
+  const token = req.body.token;
+  res.render("studentLogin", { title: "Express" });
 });
 
 module.exports = router;
