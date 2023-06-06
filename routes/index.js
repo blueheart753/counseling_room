@@ -113,70 +113,75 @@ router.post("/reservation", function (req, res, next) {
   }
 });
 
-router.get("/reservationCheck", function (req, res, next) {
-  let reservations = {
-    'first': '-',
-    'second': '-',
-    'third': '-',
-    'fourth': '-',
-    'fifth': '-',
-    'sixth': '-',
-    'seventh': '-'
-  };
-  let currentDate = new Date();
+const reservationList = function (link) {
+  router.get(`/${link}`, function (req, res, next) {
+    let reservations = {
+      first: "",
+      second: "",
+      third: "",
+      fourth: "",
+      fifth: "",
+      sixth: "",
+      seventh: "",
+    };
+    let currentDate = new Date();
 
-  let year = currentDate.getFullYear();
-  let month = String(currentDate.getMonth() + 1).padStart(2, "0");
-  let day = String(currentDate.getDate()).padStart(2, "0");
+    let year = currentDate.getFullYear();
+    let month = String(currentDate.getMonth() + 1).padStart(2, "0");
+    let day = String(currentDate.getDate()).padStart(2, "0");
 
-  let sqlDate = year + "-" + month + "-" + day;
+    let sqlDate = year + "-" + month + "-" + day;
 
-  connection.executeQuery(
-    `
-  SELECT * FROM reservationTb
-  JOIN studentTB ON reservationTb.id = studentTb.student_id
-  WHERE reservationTb.reservation_day = '${sqlDate}' AND studentTb.googleKey = '${req.cookies.studentAuth}';`,
-    [],
-    (err, result) => {
-      if (err) {
-        console.error("Error executing SELECT query:", err);
-        return;
-      }
-      console.log("Query result:", result);
-
-      result.forEach((item) => {
-        console.log(item.reservarion_time);
-        switch (item.reservarion_time) {
-          case '1교시':
-            reservations['first'] = "O";
-            break;
-          case '2교시':
-            reservations['second'] = "O";
-            break;
-          case '3교시':
-            reservations['third'] = "O";
-            break;
-          case '4교시':
-            reservations['fourth'] = "O";
-            break;
-          case '5교시':
-            reservations['fifth'] = "O";
-            break
-          case '6교시':
-            reservations['sixth'] = "O";
-            break;
-          case '7교시':
-            reservations['seventh'] = 'O';
-            break;
+    connection.executeQuery(
+      `
+    SELECT * FROM reservationTb
+    JOIN studentTB ON reservationTb.id = studentTb.student_id
+    WHERE reservationTb.reservation_day = '${sqlDate}' AND studentTb.googleKey = '${req.cookies.studentAuth}';`,
+      [],
+      (err, result) => {
+        if (err) {
+          console.error("Error executing SELECT query:", err);
+          return;
         }
-      });
-      console.log("reservations:", reservations);
-      res.render("reservationCheck", { title: "Express", reservations });
-    }
-  );
+        console.log("Query result:", result);
 
-  res.render("reservationCheck", { title: "Express", reservations: reservations });
-});
+        result.forEach((item) => {
+          console.log(item.reservarion_time);
+          switch (item.reservarion_time) {
+            case "1교시":
+              reservations["first"] = "예약 중";
+              break;
+            case "2교시":
+              reservations["second"] = "예약 중";
+              break;
+            case "3교시":
+              reservations["third"] = "예약 중";
+              break;
+            case "4교시":
+              reservations["fourth"] = "예약 중";
+              break;
+            case "5교시":
+              reservations["fifth"] = "예약 중";
+              break;
+            case "6교시":
+              reservations["sixth"] = "예약 중";
+              break;
+            case "7교시":
+              reservations["seventh"] = "예약 중";
+              break;
+          }
+        });
+        console.log(`${link}`, reservations);
+        res.render(`${link}`, { title: "Express", reservations });
+      }
+    );
+
+    res.render(`${link}`, { title: "Express", reservations: reservations });
+  });
+};
+
+reservationList("reservation");
+reservationList("reservationCheck");
 
 router.get("/teacherLogin", function (req, res, next) {
   res.render("teacherLogin", { title: "Express" });

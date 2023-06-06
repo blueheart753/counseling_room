@@ -1,7 +1,6 @@
 @font-face {
-  font-family: 'KIMM_Bold';
-  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2212@1.0/KIMM_Bold.woff2')
-    format('woff2');
+  font-family: "KIMM_Bold";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2212@1.0/KIMM_Bold.woff2") format("woff2");
   font-weight: 700;
   font-style: normal;
 }
@@ -74,6 +73,10 @@ th {
   background: transparent;
 }
 
+td:nth-child(2) {
+  color: #f00;
+}
+
 td {
   background: #fff;
 }
@@ -113,7 +116,7 @@ td {
 
 .checkCancel > p {
   font-size: 1.6em;
-  font-family: 'KIMM_Bold';
+  font-family: "KIMM_Bold";
 }
 
 .checkCancel > button {

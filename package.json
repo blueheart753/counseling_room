@@ -19,5 +19,13 @@
   "main": "app.js",
   "author": "",
   "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/blueheart753/counseling_room.git"
+  },
+  "bugs": {
+    "url": "https://github.com/blueheart753/counseling_room/issues"
+  },
+  "homepage": "https://github.com/blueheart753/counseling_room#readme",
   "description": ""
 }
