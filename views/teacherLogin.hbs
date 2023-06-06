@@ -1,42 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="google-signin-client_id"
-      content="297700983813-6bcnrhkujdtt7sbk4ai0e9jhr90kommk.apps.googleusercontent.com"
-    />
-    <script src="https://apis.google.com/js/platform.js" async defer></script>
-    <script src="../JavaScript/teacherLogin.js" defer></script>
-    <link rel="stylesheet" href="../css/teacherLogin.css" />
-    <title>선생님용 로그인 페이지</title>
-  </head>
-  <body>
-    <h1 class="title">SIGN-IN</h1>
-    <form action="" method="post">
-      <h2>SIGN-IN</h2>
-      <p>대시보드를 관리하려면 로그인을 해주세요</p>
-      <div class="container">
-        <input
-          type="text"
-          name="teacher_id"
-          id="teacher_id"
-          placeholder="이름을 입력해주세요"
-          autofocus
-          required
-          maxlength="5"
-          pattern="{5}"
-        />
-        <div
-          class="g-signin2"
-          data-onsuccess="onSignIn"
-          style="height: 50px; width: 300px; text-align: center"
-        ></div>
-        <button type="button">Sign in</button>
-      </div>
-      <div class="blueContainer"></div>
-    </form>
-  </body>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="google-signin-client_id"
+    content="297700983813-6bcnrhkujdtt7sbk4ai0e9jhr90kommk.apps.googleusercontent.com" />
+  <script src="https://apis.google.com/js/platform.js" async defer></script>
+  <script src="../JavaScript/teacherLogin.js" defer></script>
+  <link rel="stylesheet" href="../css/teacherLogin.css" />
+  <title>선생님용 로그인 페이지</title>
+</head>
+
+<body>
+  <h1 class="title">SIGN-IN</h1>
+  <form action="" method="post">
+    <h2>SIGN-IN</h2>
+    <p>대시보드를 관리하려면 로그인을 해주세요</p>
+    <div class="container">
+      <input type="text" name="teacher_id" id="teacher_id" placeholder="이름을 입력해주세요" autofocus required maxlength="5"
+        pattern="{5}" />
+      <div class="g-signin2" data-onsuccess="onSignIn" style="height: 50px; width: 300px; text-align: center"></div>
+      <button type="button">Sign in</button>
+    </div>
+    <div class="blueContainer"></div>
+  </form>
+</body>
+
 </html>
