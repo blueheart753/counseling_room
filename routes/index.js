@@ -123,7 +123,6 @@ router.get("/reservation", function (req, res, next) {
     // 콜백 함수에서 렌더링하세요
     res.render("reservation", { title: "상담 예약 사이트", reservations });
   });
-  res.render("reservation", { title: "상담목록" });
 });
 
 router.post("/reservation", function (req, res, next) {
