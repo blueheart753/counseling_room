@@ -1,82 +1,84 @@
-<!DOCTYPE html>
 <html lang="en">
 
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="../css/teacherDashBoard.css" />
-  <title>Admin DashBoard</title>
-</head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/teacherDashBoard.css" />
+    <title>{{title}}</title>
+  </head>
 
-<body>
-  <div class="container">
-    <a href="./index.html">
-      <button type="button" class="prev">◀ Prev</button>
-    </a>
-    <h1>Admin DashBoard</h1>
-    <table>
-      <tr>
-        <th>1교시</th>
-        <th>2교시</th>
-        <th>3교시</th>
-        <th>4교시</th>
-        <th>5교시</th>
-        <th>6교시</th>
-        <th>7교시</th>
-      </tr>
-      <tr>
-        <td>20301</td>
-        <td>20302</td>
-        <td>20303</td>
-        <td>-</td>
-        <td>-</td>
-        <td>-</td>
-        <td>-</td>
-      </tr>
-      <tr>
-        <td>김미남</td>
-        <td>김철수</td>
-        <td>홍길동</td>
-        <td>-</td>
-        <td>-</td>
-        <td>-</td>
-        <td>-</td>
-      </tr>
-      <tr>
-        <td>상담완료</td>
-        <td>상담 중</td>
-        <td>예약 중</td>
-        <td>-</td>
-        <td>-</td>
-        <td>-</td>
-        <td>-</td>
-      </tr>
-      <tr>
-        <td>
-          <button type="button">DELETE</button>
-        </td>
-        <td>
-          <button type="button">DELETE</button>
-        </td>
-        <td>
-          <button type="button">DELETE</button>
-        </td>
-        <td>
-          <button type="button">DELETE</button>
-        </td>
-        <td>
-          <button type="button">DELETE</button>
-        </td>
-        <td>
-          <button type="button">DELETE</button>
-        </td>
-        <td>
-          <button type="button">DELETE</button>
-        </td>
-      </tr>
-    </table>
-  </div>
-</body>
+  <body>
+    <div class="container">
+      <a href="/index">
+        <button type="button" class="prev">◀ Prev</button>
+      </a>
+      <h1>Admin DashBoard</h1>
+      <form action="/deleteReservation" method="post">
+        <table>
+          <tr>
+            <th>1교시</th>
+            <th>2교시</th>
+            <th>3교시</th>
+            <th>4교시</th>
+            <th>5교시</th>
+            <th>6교시</th>
+            <th>7교시</th>
+          </tr>
+          <tr>
+            <td>{{reservations.firstName}}</td>
+            <td>{{reservations.secondName}}</td>
+            <td>{{reservations.thirdName}}</td>
+            <td>{{reservations.fourthName}}</td>
+            <td>{{reservations.fifthName}}</td>
+            <td>{{reservations.sixthName}}</td>
+            <td>{{reservations.seventhName}}</td>
+          </tr>
+          <tr>
+            <td>{{reservations.firstId}}</td>
+            <td>{{reservations.secondId}}</td>
+            <td>{{reservations.thirdId}}</td>
+            <td>{{reservations.fourthId}}</td>
+            <td>{{reservations.fifthId}}</td>
+            <td>{{reservations.sixthId}}</td>
+            <td>{{reservations.seventhId}}</td>
+          </tr>
+
+          <tr>
+            <td>{{reservations.first}}</td>
+            <td>{{reservations.second}}</td>
+            <td>{{reservations.third}}</td>
+            <td>{{reservations.fourth}}</td>
+            <td>{{reservations.fifth}}</td>
+            <td>{{reservations.sixth}}</td>
+            <td>{{reservations.seventh}}</td>
+          </tr>
+          <tr>
+            <td>
+              <button type="submit">DELETE</button>
+            </td>
+            <td>
+              <button type="submit">DELETE</button>
+            </td>
+            <td>
+              <button type="submit">DELETE</button>
+            </td>
+            <td>
+              <button type="submit">DELETE</button>
+            </td>
+            <td>
+              <button type="submit">DELETE</button>
+            </td>
+            <td>
+              <button type="submit">DELETE</button>
+            </td>
+            <td>
+              <button type="submit">DELETE</button>
+            </td>
+          </tr>
+        </table>
+      </form>
+    </div>
+  </body>
 
 </html>

@@ -1,15 +1,15 @@
 var mysql = require("mysql");
 
-function DBManager() {
+function AdminDBManager() {
   this.connection = mysql.createConnection({
     host: "localhost",
-    user: "student",
+    user: "teacher",
     password: "Admin1234",
     database: "counsDB",
   });
 }
 
-DBManager.prototype.connect = function () {
+AdminDBManager.prototype.connect = function () {
   let self = this;
   this.connection.connect(function (err) {
     if (err) {
@@ -20,7 +20,7 @@ DBManager.prototype.connect = function () {
   });
 };
 
-DBManager.prototype.disconnect = function () {
+AdminDBManager.prototype.disconnect = function () {
   let self = this;
   this.connection.end(function (err) {
     if (err) {
@@ -31,7 +31,7 @@ DBManager.prototype.disconnect = function () {
   });
 };
 
-DBManager.prototype.executeQuery = function (query, params, callback) {
+AdminDBManager.prototype.executeQuery = function (query, params, callback) {
   let self = this;
   this.connection.query(query, params, function (err, result) {
     if (err) {
@@ -43,4 +43,4 @@ DBManager.prototype.executeQuery = function (query, params, callback) {
   });
 };
 
-module.exports = DBManager;
+module.exports = AdminDBManager;
