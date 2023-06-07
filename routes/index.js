@@ -38,7 +38,7 @@ let getDecodedOAuthJwtGoogle = async (token, res) => {
     if (ticket.payload.hd == "sdh.hs.kr") {
       console.log("success");
       // // 데이터 저장
-      res.cookie("studentAuth", ticket.envelope.kid, { path: "/" });
+      res.cookie("studentAuth", ticket.payload.sub, { path: "/" });
       connection.executeQuery(`INSERT INTO studentTb (googleKey, student_name, isStudent) VALUES ("${ticket.envelope.kid}", "${ticket.payload.name}", true)`, [], (err, result) => {
         if (err) {
           console.error("Error executing SELECT query:", err);
@@ -372,92 +372,6 @@ router.post("/teacherLogin", function (req, res, next) {
     }
   });
   res.render("teacherDashBoard", { title: "선생님 로그인 페이지 | Teacher Sign In Page" });
-});
-
-router.post("/deleteReservation", function (req, res, next) {
-  let reservations = {
-    first: "",
-    second: "",
-    third: "",
-    fourth: "",
-    fifth: "",
-    sixth: "",
-    seventh: "",
-  };
-
-  let student_id = {
-    firstId: "",
-    secondId: "",
-    thirdId: "",
-    fourthId: "",
-    fifthId: "",
-    sixthId: "",
-    seventhId: "",
-  };
-
-  let studentsName = {
-    firstName: "",
-    secondName: "",
-    thirdName: "",
-    fourthName: "",
-    fifthName: "",
-    sixthName: "",
-    seventhName: "",
-  };
-  console.log(req.body);
-  connection.executeQuery(
-    `DELETE FROM reservationTb 
-     WHERE id = EXISTS (SELECT student_id FROM studentTb)`,
-    [],
-    (err, result) => {
-      if (err) {
-        console.error("Error executing DELETE query:", err);
-        return;
-      }
-      result.forEach((item) => {
-        switch (item.reservation_time) {
-          case "1교시":
-            reservations["firstName"] = "";
-            reservations["firstId"] = "";
-            reservations["first"] = "";
-            break;
-          case "2교시":
-            reservations["secondName"] = "";
-            reservations["secondId"] = "";
-            reservations["second"] = "";
-            break;
-          case "3교시":
-            reservations["thirdName"] = "";
-            reservations["thirdId"] = "";
-            reservations["third"] = "";
-            break;
-          case "4교시":
-            reservations["fourthName"] = "";
-            reservations["fourthId"] = "";
-            reservations["fourth"] = "";
-            break;
-          case "5교시":
-            reservations["fifthName"] = "";
-            reservations["fifthId"] = "";
-            reservations["fifth"] = "";
-            break;
-          case "6교시":
-            reservations["sixthName"] = "";
-            reservations["sixthId"] = "";
-            reservations["sixth"] = "";
-            break;
-          case "7교시":
-            reservations["seventhName"] = "";
-            reservations["seventhId"] = "";
-            reservations["seventh"] = "";
-            break;
-        }
-        console.log("teacherDashBoard", studentId);
-      });
-      console.log(req.body.student_id);
-      res.redirect("/deleteReservation");
-    }
-  );
 });
 
 router.post("/studentLogin", function (req, res, next) {
