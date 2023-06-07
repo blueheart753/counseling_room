@@ -127,7 +127,7 @@ router.get("/reservation", function (req, res, next) {
 
 router.post("/reservation", function (req, res, next) {
   if (!!req.cookies.studentAuth) {
-    connection.executeQuery(`SELECT * FROM studentTb WHERE googleKey = "${req.cookies.studentAuth}" `, [], (err, result) => {
+    connection.executeQuery(`SELECT * FROM studentTb WHERE googleKey = "${req.cookies.studentAuth}"`, [], (err, result) => {
       if (err) {
         console.error("Error executing SELECT query:", err);
         return;
@@ -140,9 +140,9 @@ router.post("/reservation", function (req, res, next) {
       let day = String(currentDate.getDate()).padStart(2, "0");
 
       let sqlDate = year + "-" + month + "-" + day;
-      //
+
       connection.executeQuery(
-        `INSERT INTO reservationTb (student_name, id, reservation_date, reservation_time) select student_name, ${result[0].student_id}, "${sqlDate}", "${req.body.time}" from studenttb WHERE EXISTS (SELECT student_name FROM studenttb)`,
+        `INSERT INTO reservationTb (student_name, id, reservation_date, reservation_time) VALUES ("${result[0].student_name}", ${result[0].student_id}, "${sqlDate}", "${req.body.time}")`,
         [],
         (err, result) => {
           if (err) {
@@ -381,7 +381,8 @@ router.post("/studentLogin", function (req, res, next) {
 
 router.post("/studentId", function (req, res, next) {
   if (!!req.cookies.studentAuth) {
-    connection.executeQuery(`UPDATE studentTb SET student_id = ${req.body.student_id} WHERE googleKey = "${req.cookies.studentAuth}"`, [], (err, result) => {
+    console.log(req.body.student_id);
+    connection.executeQuery(`UPDATE studentTb SET student_id = ${req.body.student_id}`, [], (err, result) => {
       if (err) {
         console.error("Error executing UPDATE query:", err);
         return;
