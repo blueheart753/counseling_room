@@ -47,32 +47,32 @@ let getDecodedOAuthJwtGoogle = async (token, res) => {
         console.log("Query result:", result);
       });
 
-      res.render("studentLogin", { title: "Express" });
+      res.render("studentLogin", { title: "학생 로그인 페이지 | Student Sign In Page" });
       return;
       // return { status: 200, data: ticket.envelope.kid };
       // localStorage.setItem("studentAuth", ticket.envelope.kid);
     } else {
       console.log("fail");
-      res.render("studentLogin", { title: "Express" });
+      res.render("studentLogin", { title: "학생 로그인 페이지 | Student Sign In Page" });
     }
     return ticket;
   } catch (error) {
     console.log(error.message);
-    res.render("studentLogin", { title: "Express" });
+    res.render("studentLogin", { title: "학생 로그인 페이지 | Student Sign In Page" });
   }
 };
 
 /* GET home page. */
 router.get("/", function (req, res, next) {
-  res.render("index", { title: "Express" });
+  res.render("index", { title: "WellCome To 상담실 | Counseling Room" });
 });
 
 router.get("/studentPage", function (req, res, next) {
-  res.render("studentPage", { title: "Express" });
+  res.render("studentPage", { title: "학생용 페이지 | Student Page" });
 });
 
 router.get("/studentLogin", function (req, res, next) {
-  res.render("studentLogin", { title: "Express" });
+  res.render("studentLogin", { title: "학생 로그인 페이지 | Student Sign In Page" });
 });
 
 router.get("/reservation", function (req, res, next) {
@@ -203,12 +203,12 @@ router.get("/reservationCheck", function (req, res, next) {
     });
     console.log("reservationCheck", reservations);
     // 콜백 함수에서 렌더링하세요
-    res.render("reservationCheck", { title: "Express", reservations });
+    res.render("reservationCheck", { title: "예약 확인 목록 페이지 | Reservation Check List Page", reservations });
   });
 });
 
 router.get("/teacherLogin", function (req, res, next) {
-  res.render("teacherLogin", { title: "Express" });
+  res.render("teacherLogin", { title: "선생님용 로그인 페이지 | Teacher Sign In Page" });
 });
 
 router.get("/teacherDashBoard", function (req, res, next) {
@@ -368,10 +368,10 @@ router.post("/teacherLogin", function (req, res, next) {
       res.redirect("/teacherDashboard");
     } else {
       console.log("login failed");
-      res.render("teacherLogin", { title: "Express", error: "Teacher not found" });
+      res.render("/teacherLogin", { title: "선생님 로그인 페이지 | Teacher Sign In Page", error: "Teacher not found" });
     }
   });
-  res.render("teacherDashBoard", { title: "Express" });
+  res.render("teacherDashBoard", { title: "선생님 로그인 페이지 | Teacher Sign In Page" });
 });
 
 router.post("/deleteReservation", function (req, res, next) {
