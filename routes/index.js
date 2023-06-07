@@ -55,6 +55,7 @@ const getDecodedOAuthJwtGoogle = async (token, res) => {
       });
 
       res.render("studentLogin", { title: "Express" });
+      return;
       // return { status: 200, data: ticket.envelope.kid };
       // localStorage.setItem("studentAuth", ticket.envelope.kid);
     } else {
@@ -113,75 +114,105 @@ router.post("/reservation", function (req, res, next) {
   }
 });
 
-const reservationList = function (link) {
-  router.get(`/${link}`, function (req, res, next) {
-    let reservations = {
-      first: "",
-      second: "",
-      third: "",
-      fourth: "",
-      fifth: "",
-      sixth: "",
-      seventh: "",
-    };
-    let currentDate = new Date();
+router.get("/reservationCheck", function (req, res, next) {
+  let reservations = {
+    first: "",
+    second: "",
+    third: "",
+    fourth: "",
+    fifth: "",
+    sixth: "",
+    seventh: "",
+  };
 
-    let year = currentDate.getFullYear();
-    let month = String(currentDate.getMonth() + 1).padStart(2, "0");
-    let day = String(currentDate.getDate()).padStart(2, "0");
+  connection.executeQuery(`SELECT * FROM reservationTb`, [], (err, result) => {
+    if (err) {
+      console.error("Error executing SELECT query:", err);
+      return;
+    }
+    console.log("Query result:", result);
 
-    let sqlDate = year + "-" + month + "-" + day;
-
-    connection.executeQuery(
-      `
-    SELECT * FROM reservationTb
-    JOIN studentTB ON reservationTb.id = studentTb.student_id
-    WHERE reservationTb.reservation_day = '${sqlDate}' AND studentTb.googleKey = '${req.cookies.studentAuth}';`,
-      [],
-      (err, result) => {
-        if (err) {
-          console.error("Error executing SELECT query:", err);
-          return;
-        }
-        console.log("Query result:", result);
-
-        result.forEach((item) => {
-          console.log(item.reservarion_time);
-          switch (item.reservarion_time) {
-            case "1교시":
-              reservations["first"] = "예약 중";
-              break;
-            case "2교시":
-              reservations["second"] = "예약 중";
-              break;
-            case "3교시":
-              reservations["third"] = "예약 중";
-              break;
-            case "4교시":
-              reservations["fourth"] = "예약 중";
-              break;
-            case "5교시":
-              reservations["fifth"] = "예약 중";
-              break;
-            case "6교시":
-              reservations["sixth"] = "예약 중";
-              break;
-            case "7교시":
-              reservations["seventh"] = "예약 중";
-              break;
-          }
-        });
-        console.log(`${link}`, reservations);
-        res.render(`${link}`, { title: "Express", reservations });
+    result.forEach((item) => {
+      console.log(item.reservation_time);
+      switch (item.reservation_time) {
+        case "1교시":
+          reservations["first"] = "예약 중";
+          break;
+        case "2교시":
+          reservations["second"] = "예약 중";
+          break;
+        case "3교시":
+          reservations["third"] = "예약 중";
+          break;
+        case "4교시":
+          reservations["fourth"] = "예약 중";
+          break;
+        case "5교시":
+          reservations["fifth"] = "예약 중";
+          break;
+        case "6교시":
+          reservations["sixth"] = "예약 중";
+          break;
+        case "7교시":
+          reservations["seventh"] = "예약 중";
+          break;
       }
-    );
-
-    res.render(`${link}`, { title: "Express", reservations: reservations });
+    });
+    console.log("reservationCheck", reservations);
+    // 콜백 함수에서 렌더링하세요
+    res.render("reservationCheck", { title: "Express", reservations });
   });
-};
+});
 
-reservationList("reservation");
-reservationList("reservationCheck");
+router.get("/reservation", function (req, res, next) {
+  let reservations = {
+    first: "12e23242413",
+    second: "12e2324243",
+    third: "12e23242413",
+    fourth: "12e2324243",
+    fifth: "12e23242413",
+    sixth: "12e23242413",
+    seventh: "12e23242413",
+  };
+
+  connection.executeQuery(`SELECT * FROM reservationTb`, [], (err, result) => {
+    if (err) {
+      console.error("Error executing SELECT query:", err);
+      return;
+    }
+    console.log("Query result:", result);
+
+    result.forEach((item) => {
+      console.log(item.reservation_time);
+      switch (item.reservation_time) {
+        case "1교시":
+          reservations["first"] = "예약 중";
+          break;
+        case "2교시":
+          reservations["second"] = "예약 중";
+          break;
+        case "3교시":
+          reservations["third"] = "예약 중";
+          break;
+        case "4교시":
+          reservations["fourth"] = "예약 중";
+          break;
+        case "5교시":
+          reservations["fifth"] = "예약 중";
+          break;
+        case "6교시":
+          reservations["sixth"] = "예약 중";
+          break;
+        case "7교시":
+          reservations["seventh"] = "예약 중";
+          break;
+      }
+    });
+    console.log("reservation", reservations);
+    // 콜백 함수에서 렌더링하세요
+    res.render("reservation", { title: "Express", reservations });
+  });
+});
 
 router.get("/teacherLogin", function (req, res, next) {
   res.render("teacherLogin", { title: "Express" });
