@@ -132,7 +132,7 @@ router.post("/reservation", function (req, res, next) {
         console.error("Error executing SELECT query:", err);
         return;
       }
-      console.log("Query result:", result[0].student_id);
+      // console.log("Query result:", result[0].student_id);
       let currentDate = new Date();
 
       let year = currentDate.getFullYear();
@@ -142,7 +142,7 @@ router.post("/reservation", function (req, res, next) {
       let sqlDate = year + "-" + month + "-" + day;
 
       connection.executeQuery(
-        `INSERT INTO reservationTb (student_name, id, reservation_date, reservation_time) VALUES ("${result[0].student_name}", ${result[0].student_id}, "${sqlDate}", "${req.body.time}")`,
+        `INSERT INTO reservationTb (student_name, id, reservation_date, reservation_time) select student_name, student_id, "${sqlDate}", "${req.body.time}"from studenttb WHERE EXISTS (SELECT student_name,student_id FROM studenttb);`,
         [],
         (err, result) => {
           if (err) {
