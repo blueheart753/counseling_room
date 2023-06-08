@@ -4,7 +4,7 @@ function AdminDBManager() {
   this.connection = mysql.createConnection({
     host: "localhost",
     user: "teacher",
-    password: "Admin1234",
+    password: "Admin1234567890*",
     database: "counsDB",
   });
 }
